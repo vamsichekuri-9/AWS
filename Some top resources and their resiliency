@@ -1,0 +1,19 @@
+Id	Global Resilient	                        Region Resilient	Availability Zone Resilient
+1	AWS Identity and Access Management (IAM)	Amazon S3	        Amazon EC2
+2	Amazon Route 53	                                Amazon DynamoDB	        Amazon RDS (without Multi-AZ configuration)
+3	AWS CloudFront	                                Amazon VPC	        Amazon Elastic Block Store (EBS)
+4	AWS Organizations	                        AWS Lambda	        Amazon ElastiCache (without replication)
+5	Amazon CloudWatch (global services monitoring)	Amazon SNS	        Elastic Load Balancing (ELB) instances
+6	AWS Shield (global DDoS protection)	        Amazon SQS	        Amazon EC2 Auto Scaling (within a single AZ)
+7	AWS WAF (Web Application Firewall)	        AWS CodeDeploy (regional deployments)	
+8	AWS Global Accelerator	                        AWS Kinesis (streams are regional)	
+9	Amazon Simple Email Service (SES) 	        Amazon Glacier	
+10	Amazon RDS (Multi-AZ for failover to another region)	
+
+Explanation of Categories:
+
+Global Resilient: These services are designed to be globally available and resilient, not tied to any specific region. They provide capabilities that span across AWS's global infrastructure.
+
+Region Resilient: These services operate within a specific region but are designed to handle failures within that region through various configurations. They are resilient to issues in a single AZ by utilizing multiple AZs within the region or through specific regional features.
+
+Availability Zone Resilient: These services are dependent on a specific AZ within a region. If the AZ experiences issues, these services or instances may become unavailable unless configured with redundancy or failover to other AZs.
