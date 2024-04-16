@@ -1,0 +1,11 @@
+Public Subnet:
+Definition: A public subnet in AWS is one that has a route to the internet via an internet gateway. This allows instances within the subnet to be directly reachable from the internet, provided they are assigned a public IP address or an Elastic IP.
+
+Use Case: You typically place EC2 instances in a public subnet if they need to serve traffic directly from the internet, such as web servers, proxy servers, or any servers that need direct inbound connectivity.
+
+
+
+Private Subnet:
+Definition: A private subnet does not have a route to the internet gateway and therefore, cannot directly send or receive traffic to and from the internet. Instances in a private subnet can access the internet using NAT (Network Address Translation) gateways or instances that route the traffic, ensuring the instances themselves are not directly exposed to the internet.
+
+Use Case: EC2 instances in private subnets are typically used for backend processes that should not be directly accessible from the internet. This includes application servers, databases, and internal service servers.
